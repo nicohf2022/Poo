@@ -51,11 +51,11 @@ namespace Ucu.Poo.Defense
         }
 
        
-        public PublicationDiscount AddDiscount(int amount)
+        public PublicationDiscount AddDiscount(int discount)
         {
-            PublicationDiscount discount = new PublicationDiscount(amount);
-            this.items.Add(discount);
-            return discount;
+            PublicationDiscount item= new PublicationDiscount(discount);
+            this.items.Add(item);
+            return item;
         }
     }
 
