@@ -33,5 +33,21 @@ namespace Ucu.Poo.Defense
         {
             this.items.Remove(item);
         }
+    
+        //se agrega metodo AsText para saber el string de la publicacion.
+        public string AsText()
+        {
+        
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Publicacion");
+            sb.AppendLine("Fecha de finalizacion: " + this.EndDate);
+            sb.AppendLine("Items:");
+            foreach (PublicationItem item in this.items)
+            {
+                sb.AppendLine(item.Price+ " " + item.Material.Name + " " + item.Quantity);
+            }
+            return sb.ToString();
+        }
+
     }
 }

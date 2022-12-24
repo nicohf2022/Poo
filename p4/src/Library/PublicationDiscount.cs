@@ -1,8 +1,10 @@
 using System;
+using System.Text;
+using System.Collections.Generic;
 
 namespace Ucu.Poo.Defense
 {
-    public class PublicationDiscount
+    public class PublicationDiscount: IPublicationItem
     {
         private int amount;
 
@@ -14,7 +16,12 @@ namespace Ucu.Poo.Defense
             }
             set
             {
-                this.amount = value;
+            if (value >=0)
+            {
+                throw new ArgumentException("El valor  tiene que ser negativo");
+                
+            }
+            this.amount=value;
             }
         }
 
